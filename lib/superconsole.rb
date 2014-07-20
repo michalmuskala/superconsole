@@ -3,20 +3,8 @@ require 'superconsole/railtie' if defined?(Rails)
 require 'superconsole/initializer'
 
 module Superconsole
-  module_function
+  mattr_accessor :feed
+  self.feed = '‣'
 
-  attr_writer :feed
-
-  def feed
-    @feed ||= "\u00BB"
-  end
-
-  def init(app = nil)
-    Initializer.new(app).call
-  end
-
-  def start
-    init
-    Pry.start
-  end
+  mattr_accessor :app
 end

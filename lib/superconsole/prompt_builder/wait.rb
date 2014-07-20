@@ -7,7 +7,11 @@ module Superconsole
       private
 
       def intro
-        ' ' * (line.size + name.size + target.size)
+        ' ' * space_size
+      end
+
+      def space_size
+        line.size + name.size + environment.size + target.size
       end
     end
   end

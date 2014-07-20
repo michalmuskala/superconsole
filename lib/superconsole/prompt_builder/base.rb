@@ -22,16 +22,20 @@ module Superconsole
 
       private
 
+      def name
+        @name ||= Superconsole.app.class.parent_name.underscore
+      end
+
+      def environment
+        @environment ||= "##{Rails.env}"
+      end
+
       def intro
         ''
       end
 
       def line
         @line ||= "[#{@pry.input_array.size}] "
-      end
-
-      def name
-        @name ||= @pry.config.prompt_name
       end
 
       def level

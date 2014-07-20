@@ -7,7 +7,7 @@ module Superconsole
       private
 
       def intro
-        "#{line.white}#{name.blueish}#{target}"
+        "#{line.white}#{name.yellowish}#{environment.blueish}#{target}"
       end
     end
   end
